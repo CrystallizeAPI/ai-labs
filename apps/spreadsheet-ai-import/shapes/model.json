@@ -1,0 +1,2547 @@
+{
+  "version": "0.0.1",
+  "operations": [
+    {
+      "identifier": "book",
+      "name": "Book",
+      "components": [],
+      "type": "product",
+      "intent": "shape/create"
+    },
+    {
+      "identifier": "series",
+      "name": "Series",
+      "components": [],
+      "type": "document",
+      "intent": "shape/create"
+    },
+    {
+      "identifier": "book",
+      "name": "Book",
+      "components": [],
+      "type": "product",
+      "intent": "shape/create"
+    },
+    {
+      "identifier": "ingredient",
+      "name": "Ingredient",
+      "components": [],
+      "type": "document",
+      "intent": "shape/create"
+    },
+    {
+      "identifier": "instrument",
+      "name": "Instrument ",
+      "components": [],
+      "type": "product",
+      "intent": "shape/create"
+    },
+    {
+      "identifier": "guitar",
+      "name": "Guitar",
+      "components": [],
+      "intent": "piece/create"
+    },
+    {
+      "identifier": "instrument",
+      "name": "Instrument ",
+      "components": [],
+      "type": "product",
+      "intent": "shape/create"
+    },
+    {
+      "identifier": "allergen",
+      "name": "Allergen",
+      "components": [
+        {
+          "id": "type",
+          "type": "singleLine",
+          "name": "Label",
+          "config": {
+            "singleLine": {}
+          }
+        },
+        {
+          "id": "icon",
+          "type": "images",
+          "name": "Icon",
+          "config": {
+            "images": {}
+          }
+        },
+        {
+          "id": "scientific-name",
+          "type": "singleLine",
+          "name": "Scientific name",
+          "config": {
+            "singleLine": {
+              "multilingual": true,
+              "required": false,
+              "discoverable": true
+            }
+          }
+        },
+        {
+          "id": "description",
+          "type": "richText",
+          "name": "Description",
+          "config": {
+            "richText": {
+              "multilingual": true,
+              "discoverable": true
+            }
+          }
+        },
+        {
+          "id": "severity-notes",
+          "type": "richText",
+          "name": "Severity notes",
+          "config": {
+            "richText": {
+              "multilingual": true,
+              "discoverable": true
+            }
+          }
+        }
+      ],
+      "type": "document",
+      "intent": "shape/upsert"
+    },
+    {
+      "identifier": "contributor",
+      "name": "Contributor",
+      "components": [
+        {
+          "id": "name",
+          "type": "singleLine",
+          "name": "Name",
+          "config": {}
+        },
+        {
+          "id": "place-of-birth",
+          "type": "singleLine",
+          "name": "Place of birth",
+          "config": {}
+        },
+        {
+          "id": "picture",
+          "type": "images",
+          "name": "Picture",
+          "config": {}
+        },
+        {
+          "id": "date-of-birth",
+          "type": "datetime",
+          "name": "Date of birth",
+          "config": {}
+        },
+        {
+          "id": "date-of-death",
+          "type": "datetime",
+          "name": "Date of death",
+          "config": {}
+        },
+        {
+          "id": "bio",
+          "type": "richText",
+          "name": "Bio",
+          "config": {}
+        }
+      ],
+      "type": "document",
+      "intent": "shape/upsert"
+    },
+    {
+      "identifier": "series",
+      "name": "Series",
+      "components": [
+        {
+          "id": "title",
+          "type": "singleLine",
+          "name": "Title",
+          "config": {}
+        },
+        {
+          "id": "description",
+          "type": "richText",
+          "name": "Description",
+          "config": {}
+        },
+        {
+          "id": "image",
+          "type": "images",
+          "name": "Image",
+          "config": {}
+        },
+        {
+          "id": "books",
+          "type": "itemRelations",
+          "name": "Books",
+          "config": {
+            "itemRelations": {
+              "minItems": 2,
+              "minSkus": 0,
+              "maxSkus": 0,
+              "acceptedShapeIdentifiers": [
+                "book"
+              ]
+            }
+          }
+        }
+      ],
+      "type": "document",
+      "intent": "shape/upsert"
+    },
+    {
+      "identifier": "seo",
+      "name": "SEO",
+      "components": [
+        {
+          "id": "title",
+          "type": "singleLine",
+          "name": "Title",
+          "config": {}
+        },
+        {
+          "id": "description",
+          "type": "richText",
+          "name": "Description",
+          "config": {}
+        },
+        {
+          "id": "image",
+          "type": "images",
+          "name": "Image",
+          "config": {}
+        }
+      ],
+      "intent": "piece/upsert"
+    },
+    {
+      "identifier": "book",
+      "name": "Book",
+      "components": [
+        {
+          "id": "title",
+          "type": "singleLine",
+          "name": "Title",
+          "config": {
+            "singleLine": {
+              "required": true,
+              "min": 3,
+              "max": 100
+            }
+          }
+        },
+        {
+          "id": "author",
+          "type": "itemRelations",
+          "name": "Author",
+          "config": {
+            "itemRelations": {
+              "minItems": 1,
+              "maxItems": 1,
+              "minSkus": 0,
+              "maxSkus": 0,
+              "acceptedShapeIdentifiers": [
+                "contributor"
+              ],
+              "quickSelect": {
+                "folders": [
+                  {
+                    "folderId": "6319ecea6489f3ab8a1fa733"
+                  }
+                ]
+              }
+            }
+          }
+        },
+        {
+          "id": "summary",
+          "type": "richText",
+          "name": "Summary",
+          "config": {
+            "richText": {}
+          }
+        },
+        {
+          "id": "series",
+          "type": "itemRelations",
+          "name": "Series",
+          "config": {
+            "itemRelations": {
+              "minItems": 0,
+              "minSkus": 0,
+              "maxSkus": 0,
+              "quickSelect": {
+                "folders": [
+                  {
+                    "folderId": "632327b8993c744713cae0b0"
+                  }
+                ]
+              }
+            }
+          }
+        },
+        {
+          "id": "related-series",
+          "type": "itemRelations",
+          "name": "Related series",
+          "config": {
+            "itemRelations": {
+              "minItems": 0,
+              "minSkus": 0,
+              "maxSkus": 0,
+              "acceptedShapeIdentifiers": [
+                "series"
+              ],
+              "quickSelect": {
+                "folders": [
+                  {
+                    "folderId": "632327b8993c744713cae0b0"
+                  }
+                ]
+              }
+            }
+          }
+        },
+        {
+          "id": "seo",
+          "type": "piece",
+          "name": "SEO",
+          "config": {
+            "piece": {
+              "identifier": "seo"
+            }
+          }
+        }
+      ],
+      "variantComponents": [
+        {
+          "id": "contributors",
+          "type": "contentChunk",
+          "name": "Contributors",
+          "config": {
+            "contentChunk": {
+              "components": [
+                {
+                  "id": "contributor",
+                  "type": "itemRelations",
+                  "name": "Contributor",
+                  "config": {
+                    "itemRelations": {
+                      "minItems": 1,
+                      "maxItems": 1,
+                      "minSkus": 0,
+                      "maxSkus": 0,
+                      "acceptedShapeIdentifiers": [
+                        "contributor"
+                      ],
+                      "quickSelect": {
+                        "folders": [
+                          {
+                            "folderId": "6319ecea6489f3ab8a1fa733"
+                          }
+                        ]
+                      }
+                    }
+                  }
+                },
+                {
+                  "id": "role",
+                  "type": "selection",
+                  "name": "Role",
+                  "config": {
+                    "selection": {
+                      "min": 1,
+                      "max": 1,
+                      "options": [
+                        {
+                          "key": "author",
+                          "value": "Author"
+                        },
+                        {
+                          "key": "narrator",
+                          "value": "Narrator"
+                        },
+                        {
+                          "key": "illustrator",
+                          "value": "Illustrator"
+                        }
+                      ]
+                    }
+                  }
+                }
+              ],
+              "repeatable": true
+            }
+          }
+        },
+        {
+          "id": "isbn-10",
+          "type": "singleLine",
+          "name": "ISBN-10",
+          "config": {
+            "singleLine": {}
+          }
+        },
+        {
+          "id": "isbn-13",
+          "type": "singleLine",
+          "name": "ISBN-13",
+          "config": {
+            "singleLine": {}
+          }
+        },
+        {
+          "id": "physical-properties",
+          "type": "contentChunk",
+          "name": "Physical properties",
+          "config": {
+            "contentChunk": {
+              "components": [
+                {
+                  "id": "width",
+                  "type": "numeric",
+                  "name": "Width",
+                  "config": {
+                    "numeric": {
+                      "units": [
+                        "cm"
+                      ]
+                    }
+                  }
+                },
+                {
+                  "id": "height",
+                  "type": "numeric",
+                  "name": "Height",
+                  "config": {
+                    "numeric": {
+                      "units": [
+                        "cm"
+                      ]
+                    }
+                  }
+                },
+                {
+                  "id": "weight",
+                  "type": "numeric",
+                  "name": "Weight",
+                  "config": {
+                    "numeric": {
+                      "units": [
+                        "g"
+                      ]
+                    }
+                  }
+                }
+              ],
+              "repeatable": false
+            }
+          }
+        },
+        {
+          "id": "audio-book-properties",
+          "type": "contentChunk",
+          "name": "Audio book properties",
+          "config": {
+            "contentChunk": {
+              "components": [
+                {
+                  "id": "duration",
+                  "type": "numeric",
+                  "name": "Duration",
+                  "config": {
+                    "numeric": {
+                      "units": [
+                        "Hours"
+                      ]
+                    }
+                  }
+                }
+              ],
+              "repeatable": false
+            }
+          }
+        },
+        {
+          "id": "downloads",
+          "type": "files",
+          "name": "Downloads",
+          "config": {
+            "files": {
+              "acceptedContentTypes": [],
+              "maxFileSize": {
+                "size": 50,
+                "unit": "MiB"
+              }
+            }
+          }
+        },
+        {
+          "id": "related-books",
+          "type": "contentChunk",
+          "name": "Related books",
+          "config": {
+            "contentChunk": {
+              "components": [
+                {
+                  "id": "title",
+                  "type": "singleLine",
+                  "name": "Title",
+                  "config": {
+                    "singleLine": {}
+                  }
+                },
+                {
+                  "id": "book",
+                  "type": "itemRelations",
+                  "name": "Book",
+                  "config": {
+                    "itemRelations": {
+                      "minItems": 0,
+                      "minSkus": 0,
+                      "maxSkus": 0,
+                      "acceptedShapeIdentifiers": [
+                        "book"
+                      ],
+                      "quickSelect": {
+                        "folders": [
+                          {
+                            "folderId": "6319ecbe8a0ef15cd8cce020"
+                          }
+                        ]
+                      }
+                    }
+                  }
+                }
+              ],
+              "repeatable": true
+            }
+          }
+        }
+      ],
+      "type": "product",
+      "intent": "shape/upsert"
+    },
+    {
+      "identifier": "brand",
+      "name": "Brand",
+      "components": [
+        {
+          "id": "name",
+          "type": "singleLine",
+          "name": "Name",
+          "config": {
+            "singleLine": {
+              "multilingual": true,
+              "required": false,
+              "discoverable": true
+            }
+          }
+        },
+        {
+          "id": "logo",
+          "type": "images",
+          "name": "Logo",
+          "config": {
+            "images": {
+              "multilingual": false,
+              "discoverable": true
+            }
+          }
+        }
+      ],
+      "type": "document",
+      "intent": "shape/upsert"
+    },
+    {
+      "identifier": "electric-properties",
+      "name": "Electric properties",
+      "components": [
+        {
+          "id": "physical-dimensions",
+          "type": "contentChunk",
+          "name": "Physical dimensions",
+          "config": {
+            "contentChunk": {
+              "components": [
+                {
+                  "id": "width",
+                  "type": "numeric",
+                  "name": "Width",
+                  "config": {
+                    "numeric": {
+                      "units": [
+                        "mm",
+                        "cm"
+                      ]
+                    }
+                  }
+                },
+                {
+                  "id": "height",
+                  "type": "numeric",
+                  "name": "Height",
+                  "config": {
+                    "numeric": {
+                      "units": [
+                        "mm",
+                        "cm"
+                      ]
+                    }
+                  }
+                },
+                {
+                  "id": "length",
+                  "type": "numeric",
+                  "name": "Length",
+                  "config": {
+                    "numeric": {
+                      "units": [
+                        "mm",
+                        "cm"
+                      ]
+                    }
+                  }
+                },
+                {
+                  "id": "weight",
+                  "type": "numeric",
+                  "name": "Weight",
+                  "config": {
+                    "numeric": {
+                      "units": [
+                        "kg",
+                        "g"
+                      ]
+                    }
+                  }
+                }
+              ],
+              "repeatable": false
+            }
+          }
+        },
+        {
+          "id": "power",
+          "type": "contentChunk",
+          "name": "Power",
+          "config": {
+            "contentChunk": {
+              "components": [
+                {
+                  "id": "effect",
+                  "type": "numeric",
+                  "name": "Effect",
+                  "config": {
+                    "numeric": {
+                      "units": [
+                        "w"
+                      ]
+                    }
+                  }
+                },
+                {
+                  "id": "voltage",
+                  "type": "numeric",
+                  "name": "Voltage",
+                  "config": {
+                    "numeric": {
+                      "units": [
+                        "volt"
+                      ]
+                    }
+                  }
+                }
+              ],
+              "repeatable": false
+            }
+          }
+        }
+      ],
+      "intent": "piece/upsert"
+    },
+    {
+      "identifier": "ingredient",
+      "name": "Ingredient",
+      "components": [
+        {
+          "id": "name",
+          "type": "singleLine",
+          "name": "Name",
+          "config": {
+            "singleLine": {}
+          }
+        },
+        {
+          "id": "icon",
+          "type": "images",
+          "name": "Icon",
+          "config": {
+            "images": {}
+          }
+        },
+        {
+          "id": "usp",
+          "type": "itemRelations",
+          "name": "USP",
+          "config": {
+            "itemRelations": {
+              "minItems": 0,
+              "minSkus": 0,
+              "acceptedShapeIdentifiers": [
+                "ingredient"
+              ],
+              "quickSelect": {
+                "folders": [
+                  {
+                    "folderId": "65fc342a9b94f0e5d48b138a"
+                  }
+                ]
+              }
+            }
+          }
+        }
+      ],
+      "type": "document",
+      "intent": "shape/upsert"
+    },
+    {
+      "identifier": "food-properties",
+      "name": "Food properties",
+      "components": [
+        {
+          "id": "allergenes",
+          "type": "contentChunk",
+          "name": "Allergy Info",
+          "config": {
+            "contentChunk": {
+              "components": [
+                {
+                  "id": "allergenes",
+                  "type": "itemRelations",
+                  "name": "Allergens",
+                  "config": {
+                    "itemRelations": {
+                      "minItems": 0,
+                      "minSkus": 0,
+                      "maxSkus": 0,
+                      "acceptedShapeIdentifiers": [
+                        "allergen"
+                      ],
+                      "quickSelect": {
+                        "folders": [
+                          {
+                            "folderId": "65fc0dd89b94f0e5d48b0cc3"
+                          }
+                        ]
+                      }
+                    }
+                  }
+                },
+                {
+                  "id": "may-contain-traces-of",
+                  "type": "itemRelations",
+                  "name": "May contain traces of",
+                  "config": {
+                    "itemRelations": {
+                      "minItems": 0,
+                      "minSkus": 0,
+                      "maxSkus": 0,
+                      "acceptedShapeIdentifiers": [
+                        "allergen"
+                      ],
+                      "quickSelect": {
+                        "folders": [
+                          {
+                            "folderId": "65fc0dd89b94f0e5d48b0cc3"
+                          }
+                        ]
+                      }
+                    }
+                  }
+                },
+                {
+                  "id": "free-of",
+                  "type": "itemRelations",
+                  "name": "Free of",
+                  "config": {
+                    "itemRelations": {
+                      "minItems": 0,
+                      "minSkus": 0,
+                      "acceptedShapeIdentifiers": [
+                        "allergen",
+                        "ingredient"
+                      ],
+                      "quickSelect": {
+                        "folders": [
+                          {
+                            "folderId": "65fc0dd89b94f0e5d48b0cc3"
+                          }
+                        ]
+                      }
+                    }
+                  }
+                }
+              ],
+              "repeatable": false
+            }
+          }
+        },
+        {
+          "id": "rich-ingredients",
+          "type": "contentChunk",
+          "name": "Rich ingredients ",
+          "config": {
+            "contentChunk": {
+              "components": [
+                {
+                  "id": "amount",
+                  "type": "numeric",
+                  "name": "Amount",
+                  "config": {
+                    "numeric": {
+                      "units": [
+                        "%"
+                      ]
+                    }
+                  }
+                },
+                {
+                  "id": "ingredient",
+                  "type": "itemRelations",
+                  "name": "Ingredient",
+                  "config": {
+                    "itemRelations": {
+                      "minItems": 1,
+                      "maxItems": 1,
+                      "minSkus": 0,
+                      "maxSkus": 0,
+                      "acceptedShapeIdentifiers": [
+                        "ingredient"
+                      ],
+                      "quickSelect": {
+                        "folders": [
+                          {
+                            "folderId": "65fc342a9b94f0e5d48b138a"
+                          }
+                        ]
+                      }
+                    }
+                  }
+                }
+              ],
+              "repeatable": true
+            }
+          }
+        }
+      ],
+      "intent": "piece/upsert"
+    },
+    {
+      "identifier": "environmental-impact-data",
+      "name": "Environmental impact data",
+      "components": [
+        {
+          "id": "carbon-footprint",
+          "type": "numeric",
+          "name": "Carbon footprint",
+          "config": {
+            "numeric": {
+              "multilingual": false,
+              "required": false,
+              "discoverable": true,
+              "decimalPlaces": 1,
+              "units": [
+                "kg CO₂e/product"
+              ]
+            }
+          }
+        },
+        {
+          "id": "water-usage",
+          "type": "numeric",
+          "name": "Water usage",
+          "config": {
+            "numeric": {
+              "multilingual": false,
+              "required": false,
+              "discoverable": true,
+              "decimalPlaces": 1,
+              "units": [
+                "L"
+              ]
+            }
+          }
+        },
+        {
+          "id": "renewable-energy-consumption",
+          "type": "numeric",
+          "name": "Renewable energy consumption",
+          "config": {
+            "numeric": {
+              "multilingual": false,
+              "required": false,
+              "discoverable": true,
+              "decimalPlaces": 1,
+              "units": [
+                "%"
+              ]
+            }
+          }
+        },
+        {
+          "id": "non-renewable-energy-consumption",
+          "type": "numeric",
+          "name": "Non-renewable energy consumption",
+          "config": {
+            "numeric": {
+              "multilingual": false,
+              "required": false,
+              "discoverable": true,
+              "decimalPlaces": 1,
+              "units": [
+                "%"
+              ]
+            }
+          }
+        }
+      ],
+      "intent": "piece/upsert"
+    },
+    {
+      "identifier": "certifications-and-standards",
+      "name": "Certifications and standards",
+      "components": [
+        {
+          "id": "eco-certifications",
+          "type": "itemRelations",
+          "name": "Eco certifications",
+          "config": {
+            "itemRelations": {
+              "multilingual": false,
+              "discoverable": true,
+              "minItems": 0,
+              "minSkus": 0,
+              "maxSkus": 0,
+              "quickSelect": {
+                "folders": [
+                  {
+                    "folderId": "676294a52751522290882a1a"
+                  }
+                ]
+              }
+            }
+          }
+        },
+        {
+          "id": "compliance-standards",
+          "type": "itemRelations",
+          "name": "Compliance standards",
+          "config": {
+            "itemRelations": {
+              "multilingual": false,
+              "discoverable": true,
+              "minItems": 0,
+              "minSkus": 0,
+              "maxSkus": 0,
+              "quickSelect": {
+                "folders": [
+                  {
+                    "folderId": "676295b62751522290884883"
+                  }
+                ]
+              }
+            }
+          }
+        },
+        {
+          "id": "fair-trade-certifications",
+          "type": "itemRelations",
+          "name": "Fair trade certifications",
+          "config": {
+            "itemRelations": {
+              "multilingual": false,
+              "discoverable": true,
+              "minItems": 0,
+              "minSkus": 0,
+              "maxSkus": 0,
+              "quickSelect": {
+                "folders": [
+                  {
+                    "folderId": "6762967ebb3f753d16e918af"
+                  }
+                ]
+              }
+            }
+          }
+        }
+      ],
+      "intent": "piece/upsert"
+    },
+    {
+      "identifier": "metadata",
+      "name": "Metadata",
+      "components": [
+        {
+          "id": "title",
+          "type": "singleLine",
+          "name": "Title",
+          "config": {
+            "singleLine": {
+              "multilingual": true
+            }
+          }
+        },
+        {
+          "id": "description",
+          "type": "richText",
+          "name": "Description",
+          "config": {
+            "richText": {
+              "multilingual": true
+            }
+          }
+        },
+        {
+          "id": "image",
+          "type": "images",
+          "name": "Image",
+          "config": {
+            "images": {
+              "multilingual": false
+            }
+          }
+        }
+      ],
+      "intent": "piece/upsert"
+    },
+    {
+      "identifier": "product",
+      "name": "Product",
+      "components": [
+        {
+          "id": "name",
+          "type": "singleLine",
+          "name": "Name",
+          "config": {
+            "singleLine": {
+              "multilingual": true
+            }
+          }
+        },
+        {
+          "id": "product-details",
+          "type": "componentMultipleChoice",
+          "name": "Product details",
+          "config": {
+            "componentMultipleChoice": {
+              "choices": [
+                {
+                  "id": "electric-properties",
+                  "type": "piece",
+                  "name": "Electric properties",
+                  "config": {
+                    "piece": {
+                      "identifier": "electric-properties"
+                    }
+                  }
+                },
+                {
+                  "id": "food-properties",
+                  "type": "piece",
+                  "name": "Food properties",
+                  "config": {
+                    "piece": {
+                      "identifier": "food-properties"
+                    }
+                  }
+                }
+              ],
+              "allowDuplicates": true
+            }
+          }
+        },
+        {
+          "id": "description",
+          "type": "richText",
+          "name": "Description",
+          "config": {
+            "richText": {
+              "multilingual": true
+            }
+          }
+        },
+        {
+          "id": "digital-product-passport-data",
+          "type": "componentMultipleChoice",
+          "name": "Digital Product Passport data",
+          "config": {
+            "componentMultipleChoice": {
+              "multilingual": true,
+              "discoverable": true,
+              "choices": [
+                {
+                  "id": "environmental-impact-data",
+                  "type": "piece",
+                  "name": "Environmental impact data",
+                  "config": {
+                    "piece": {
+                      "identifier": "environmental-impact-data"
+                    }
+                  }
+                },
+                {
+                  "id": "certifications-and-standards",
+                  "type": "piece",
+                  "name": "Certifications and standards",
+                  "config": {
+                    "piece": {
+                      "identifier": "certifications-and-standards"
+                    }
+                  }
+                }
+              ],
+              "allowDuplicates": true
+            }
+          }
+        },
+        {
+          "id": "seo",
+          "type": "piece",
+          "name": "SEO",
+          "config": {
+            "piece": {
+              "identifier": "seo"
+            }
+          }
+        },
+        {
+          "id": "metadata",
+          "type": "piece",
+          "name": "Metadata",
+          "config": {
+            "piece": {
+              "identifier": "metadata"
+            }
+          }
+        }
+      ],
+      "variantComponents": [
+        {
+          "id": "included-products",
+          "type": "contentChunk",
+          "name": "Included products",
+          "config": {
+            "contentChunk": {
+              "multilingual": true,
+              "discoverable": true,
+              "components": [
+                {
+                  "id": "quantity",
+                  "type": "numeric",
+                  "name": "Quantity",
+                  "config": {
+                    "numeric": {
+                      "multilingual": true,
+                      "required": false,
+                      "discoverable": true
+                    }
+                  }
+                },
+                {
+                  "id": "product",
+                  "type": "itemRelations",
+                  "name": "Product",
+                  "config": {
+                    "itemRelations": {
+                      "multilingual": true,
+                      "discoverable": true,
+                      "minItems": 0,
+                      "maxItems": 0,
+                      "minSkus": 1,
+                      "maxSkus": 1,
+                      "acceptedShapeIdentifiers": [
+                        "book"
+                      ],
+                      "quickSelect": {
+                        "folders": [
+                          {
+                            "folderId": "68b023033b912227b9a2ed2d"
+                          },
+                          {
+                            "folderId": "6319ecbe8a0ef15cd8cce020"
+                          }
+                        ]
+                      }
+                    }
+                  }
+                }
+              ],
+              "repeatable": true
+            }
+          }
+        }
+      ],
+      "type": "product",
+      "intent": "shape/upsert"
+    },
+    {
+      "identifier": "bundle",
+      "name": "Bundle",
+      "components": [
+        {
+          "id": "title",
+          "type": "singleLine",
+          "name": "Title",
+          "config": {
+            "singleLine": {}
+          }
+        },
+        {
+          "id": "description",
+          "type": "richText",
+          "name": "Description",
+          "config": {
+            "richText": {}
+          }
+        },
+        {
+          "id": "included",
+          "type": "contentChunk",
+          "name": "Included",
+          "config": {
+            "contentChunk": {
+              "discoverable": true,
+              "components": [
+                {
+                  "id": "quantity",
+                  "type": "numeric",
+                  "name": "Quantity",
+                  "config": {
+                    "numeric": {
+                      "multilingual": false,
+                      "required": false,
+                      "discoverable": true,
+                      "units": [
+                        "Pcs"
+                      ]
+                    }
+                  }
+                },
+                {
+                  "id": "product",
+                  "type": "itemRelations",
+                  "name": "Product",
+                  "config": {
+                    "itemRelations": {
+                      "multilingual": false,
+                      "discoverable": true,
+                      "minItems": 0,
+                      "maxItems": 0,
+                      "minSkus": 0,
+                      "acceptedShapeIdentifiers": [
+                        "product"
+                      ],
+                      "quickSelect": {
+                        "folders": [
+                          {
+                            "folderId": "65fbf53f9b94f0e5d48afb1d"
+                          },
+                          {
+                            "folderId": "68f783915d880ff906019d8e"
+                          },
+                          {
+                            "folderId": "68f78208179867c002be89e9"
+                          }
+                        ]
+                      }
+                    }
+                  }
+                }
+              ],
+              "repeatable": true
+            }
+          }
+        }
+      ],
+      "variantComponents": [],
+      "type": "product",
+      "intent": "shape/upsert"
+    },
+    {
+      "identifier": "banner",
+      "name": "Banner",
+      "components": [
+        {
+          "id": "headline",
+          "type": "singleLine",
+          "name": "Headline",
+          "config": {}
+        },
+        {
+          "id": "image",
+          "type": "images",
+          "name": "Image",
+          "config": {}
+        },
+        {
+          "id": "full-width",
+          "type": "boolean",
+          "name": "Full width",
+          "config": {}
+        }
+      ],
+      "intent": "piece/upsert"
+    },
+    {
+      "identifier": "cta",
+      "name": "CTA",
+      "components": [
+        {
+          "id": "headline",
+          "type": "singleLine",
+          "name": "Headline",
+          "config": {}
+        },
+        {
+          "id": "products",
+          "type": "itemRelations",
+          "name": "Products",
+          "config": {
+            "itemRelations": {
+              "minItems": 0,
+              "maxItems": 0,
+              "minSkus": 0,
+              "acceptedShapeIdentifiers": [
+                "book"
+              ],
+              "quickSelect": {
+                "folders": [
+                  {
+                    "folderId": "6319ecbe8a0ef15cd8cce020"
+                  }
+                ]
+              }
+            }
+          }
+        }
+      ],
+      "intent": "piece/upsert"
+    },
+    {
+      "identifier": "image-hero",
+      "name": "Image hero",
+      "components": [
+        {
+          "id": "headline",
+          "type": "singleLine",
+          "name": "Headline",
+          "config": {}
+        },
+        {
+          "id": "image",
+          "type": "images",
+          "name": "Image",
+          "config": {}
+        },
+        {
+          "id": "cta",
+          "type": "contentChunk",
+          "name": "CTA",
+          "config": {
+            "contentChunk": {
+              "components": [
+                {
+                  "id": "text",
+                  "type": "singleLine",
+                  "name": "Text",
+                  "config": {}
+                },
+                {
+                  "id": "url",
+                  "type": "singleLine",
+                  "name": "URL",
+                  "config": {}
+                }
+              ],
+              "repeatable": true
+            }
+          }
+        }
+      ],
+      "intent": "piece/upsert"
+    },
+    {
+      "identifier": "image-slider",
+      "name": "Image slider",
+      "components": [
+        {
+          "id": "headline",
+          "type": "singleLine",
+          "name": "Headline",
+          "config": {}
+        },
+        {
+          "id": "images",
+          "type": "images",
+          "name": "Images",
+          "config": {}
+        }
+      ],
+      "intent": "piece/upsert"
+    },
+    {
+      "identifier": "usp",
+      "name": "USP",
+      "components": [
+        {
+          "id": "usps",
+          "type": "contentChunk",
+          "name": "USPs",
+          "config": {
+            "contentChunk": {
+              "components": [
+                {
+                  "id": "icon",
+                  "type": "images",
+                  "name": "Icon",
+                  "config": {}
+                },
+                {
+                  "id": "selling-point",
+                  "type": "singleLine",
+                  "name": "Selling point",
+                  "config": {}
+                }
+              ],
+              "repeatable": true
+            }
+          }
+        }
+      ],
+      "intent": "piece/upsert"
+    },
+    {
+      "identifier": "cookie-appliance",
+      "name": "Cooking appliance",
+      "components": [
+        {
+          "id": "title",
+          "type": "singleLine",
+          "name": "Title",
+          "config": {
+            "singleLine": {
+              "multilingual": true,
+              "required": false,
+              "discoverable": true
+            }
+          }
+        },
+        {
+          "id": "description",
+          "type": "richText",
+          "name": "Description",
+          "config": {
+            "richText": {
+              "multilingual": true,
+              "discoverable": true
+            }
+          }
+        },
+        {
+          "id": "story",
+          "type": "paragraphCollection",
+          "name": "Story",
+          "config": {
+            "paragraphCollection": {
+              "discoverable": true,
+              "multilingual": [
+                "title",
+                "body"
+              ]
+            }
+          }
+        },
+        {
+          "id": "bundle",
+          "type": "contentChunk",
+          "name": "Bundle",
+          "config": {
+            "contentChunk": {
+              "discoverable": true,
+              "components": [
+                {
+                  "id": "quantity",
+                  "type": "numeric",
+                  "name": "Quantity",
+                  "config": {
+                    "numeric": {
+                      "multilingual": false,
+                      "required": false,
+                      "discoverable": true
+                    }
+                  }
+                },
+                {
+                  "id": "products",
+                  "type": "itemRelations",
+                  "name": "Products",
+                  "config": {
+                    "itemRelations": {
+                      "multilingual": false,
+                      "discoverable": true,
+                      "minItems": 0,
+                      "maxItems": 0,
+                      "minSkus": 0,
+                      "acceptedShapeIdentifiers": [
+                        "book"
+                      ],
+                      "quickSelect": {
+                        "folders": [
+                          {
+                            "folderId": "6319ecbe8a0ef15cd8cce020"
+                          }
+                        ]
+                      }
+                    }
+                  }
+                }
+              ],
+              "repeatable": true
+            }
+          }
+        },
+        {
+          "id": "storytelling-layout-blocks",
+          "type": "componentMultipleChoice",
+          "name": "Storytelling layout blocks",
+          "config": {
+            "componentMultipleChoice": {
+              "discoverable": true,
+              "choices": [
+                {
+                  "id": "banner",
+                  "type": "piece",
+                  "name": "Banner",
+                  "config": {
+                    "piece": {
+                      "identifier": "banner"
+                    }
+                  }
+                },
+                {
+                  "id": "cta",
+                  "type": "piece",
+                  "name": "CTA",
+                  "config": {
+                    "piece": {
+                      "identifier": "cta"
+                    }
+                  }
+                },
+                {
+                  "id": "image-hero",
+                  "type": "piece",
+                  "name": "Image hero",
+                  "config": {
+                    "piece": {
+                      "identifier": "image-hero"
+                    }
+                  }
+                },
+                {
+                  "id": "image-slider",
+                  "type": "piece",
+                  "name": "Image slider",
+                  "config": {
+                    "piece": {
+                      "identifier": "image-slider"
+                    }
+                  }
+                },
+                {
+                  "id": "usp",
+                  "type": "piece",
+                  "name": "USP",
+                  "config": {
+                    "piece": {
+                      "identifier": "usp"
+                    }
+                  }
+                }
+              ],
+              "allowDuplicates": true
+            }
+          }
+        }
+      ],
+      "variantComponents": [],
+      "type": "product",
+      "intent": "shape/upsert"
+    },
+    {
+      "identifier": "3d-product-visualizer",
+      "name": "3D Product Visualizer",
+      "components": [
+        {
+          "id": "headline",
+          "type": "singleLine",
+          "name": "Headline",
+          "config": {}
+        },
+        {
+          "id": "3d-file",
+          "type": "files",
+          "name": "3D File",
+          "config": {
+            "files": {
+              "acceptedContentTypes": [],
+              "maxFileSize": {
+                "size": 50,
+                "unit": "MiB"
+              }
+            }
+          }
+        }
+      ],
+      "intent": "piece/upsert"
+    },
+    {
+      "identifier": "folder",
+      "name": "Folder",
+      "components": [
+        {
+          "id": "page-builder",
+          "type": "componentMultipleChoice",
+          "name": "Page builder",
+          "config": {
+            "componentMultipleChoice": {
+              "choices": [
+                {
+                  "id": "3d-product-visualizer",
+                  "type": "piece",
+                  "name": "3D Product Visualizer",
+                  "config": {
+                    "piece": {
+                      "identifier": "3d-product-visualizer"
+                    }
+                  }
+                },
+                {
+                  "id": "image-hero",
+                  "type": "piece",
+                  "name": "Image hero",
+                  "config": {
+                    "piece": {
+                      "identifier": "image-hero"
+                    }
+                  }
+                },
+                {
+                  "id": "image-slider",
+                  "type": "piece",
+                  "name": "Image slider",
+                  "config": {
+                    "piece": {
+                      "identifier": "image-slider"
+                    }
+                  }
+                }
+              ],
+              "allowDuplicates": true
+            }
+          }
+        },
+        {
+          "id": "title",
+          "type": "singleLine",
+          "name": "Title",
+          "config": {
+            "singleLine": {}
+          }
+        },
+        {
+          "id": "description",
+          "type": "richText",
+          "name": "Description",
+          "config": {
+            "richText": {
+              "multilingual": true
+            }
+          }
+        },
+        {
+          "id": "metadata",
+          "type": "piece",
+          "name": "Metadata",
+          "config": {
+            "piece": {
+              "identifier": "metadata"
+            }
+          }
+        },
+        {
+          "id": "contributers",
+          "type": "contentChunk",
+          "name": "Contributers",
+          "config": {
+            "contentChunk": {
+              "components": [
+                {
+                  "id": "person",
+                  "type": "itemRelations",
+                  "name": "Person",
+                  "config": {
+                    "itemRelations": {
+                      "multilingual": false,
+                      "minItems": 1,
+                      "maxItems": 1,
+                      "minSkus": 0,
+                      "maxSkus": 0,
+                      "quickSelect": {
+                        "folders": [
+                          {
+                            "folderId": "6319ecea6489f3ab8a1fa733"
+                          }
+                        ]
+                      }
+                    }
+                  }
+                },
+                {
+                  "id": "contribution",
+                  "type": "selection",
+                  "name": "Contribution",
+                  "config": {
+                    "selection": {
+                      "multilingual": false,
+                      "min": 1,
+                      "max": 1,
+                      "options": [
+                        {
+                          "key": "author",
+                          "value": "author"
+                        },
+                        {
+                          "key": "illustrator",
+                          "value": "illustrator"
+                        }
+                      ]
+                    }
+                  }
+                }
+              ],
+              "repeatable": true
+            }
+          }
+        }
+      ],
+      "type": "folder",
+      "intent": "shape/upsert"
+    },
+    {
+      "identifier": "amplifier",
+      "name": "Amplifier",
+      "components": [
+        {
+          "id": "amp-type",
+          "type": "selection",
+          "name": "Amp type",
+          "config": {
+            "selection": {
+              "multilingual": false,
+              "discoverable": true,
+              "min": 1,
+              "max": 1,
+              "options": [
+                {
+                  "key": "Tube (Valve)",
+                  "value": "valve"
+                },
+                {
+                  "key": "Solid state",
+                  "value": "solid-stage"
+                },
+                {
+                  "key": "Hybrid",
+                  "value": "hybrid"
+                },
+                {
+                  "key": "Digital modeling",
+                  "value": "digital"
+                }
+              ]
+            }
+          }
+        },
+        {
+          "id": "power",
+          "type": "numeric",
+          "name": "Power",
+          "config": {
+            "numeric": {
+              "multilingual": false,
+              "required": false,
+              "discoverable": true,
+              "units": [
+                "Watt"
+              ]
+            }
+          }
+        },
+        {
+          "id": "speaker-configuration",
+          "type": "selection",
+          "name": "Speaker configuration",
+          "config": {
+            "selection": {
+              "multilingual": false,
+              "discoverable": true,
+              "min": 0,
+              "options": [
+                {
+                  "key": "Head only",
+                  "value": "head"
+                },
+                {
+                  "key": "1x12",
+                  "value": "1x12"
+                },
+                {
+                  "key": "2x12",
+                  "value": "2x12"
+                },
+                {
+                  "key": "4x12",
+                  "value": "4x12"
+                }
+              ]
+            }
+          }
+        },
+        {
+          "id": "effects-loop",
+          "type": "boolean",
+          "name": "Effects loop",
+          "config": {
+            "boolean": {
+              "multilingual": false,
+              "discoverable": true
+            }
+          }
+        },
+        {
+          "id": "width",
+          "type": "numeric",
+          "name": "Width",
+          "config": {
+            "numeric": {
+              "multilingual": false,
+              "required": false,
+              "discoverable": true,
+              "units": [
+                "cm"
+              ]
+            }
+          }
+        },
+        {
+          "id": "height",
+          "type": "numeric",
+          "name": "Height",
+          "config": {
+            "numeric": {
+              "multilingual": false,
+              "required": false,
+              "discoverable": true,
+              "units": [
+                "cm"
+              ]
+            }
+          }
+        },
+        {
+          "id": "depth",
+          "type": "numeric",
+          "name": "Depth",
+          "config": {
+            "numeric": {
+              "multilingual": false,
+              "required": false,
+              "discoverable": true,
+              "units": [
+                "cm"
+              ]
+            }
+          }
+        },
+        {
+          "id": "weight",
+          "type": "numeric",
+          "name": "Weight",
+          "config": {
+            "numeric": {
+              "multilingual": false,
+              "required": false,
+              "discoverable": true,
+              "units": [
+                "kg"
+              ]
+            }
+          }
+        }
+      ],
+      "intent": "piece/upsert"
+    },
+    {
+      "identifier": "guitar",
+      "name": "Guitar",
+      "components": [
+        {
+          "id": "body-type",
+          "type": "selection",
+          "name": "Body type",
+          "config": {
+            "selection": {
+              "multilingual": false,
+              "discoverable": true,
+              "min": 1,
+              "max": 1,
+              "options": [
+                {
+                  "key": "Solid",
+                  "value": "solid"
+                },
+                {
+                  "key": "Hollow",
+                  "value": "hollow"
+                },
+                {
+                  "key": "Semi-hollow",
+                  "value": "semi-hollow"
+                },
+                {
+                  "key": "Acoustic",
+                  "value": "acoustic"
+                }
+              ]
+            }
+          }
+        },
+        {
+          "id": "body-material",
+          "type": "selection",
+          "name": "Body material",
+          "config": {
+            "selection": {
+              "multilingual": false,
+              "discoverable": true,
+              "min": 1,
+              "max": 1,
+              "options": [
+                {
+                  "key": "Alder",
+                  "value": "alder"
+                },
+                {
+                  "key": "Mahogany",
+                  "value": "mahogany"
+                },
+                {
+                  "key": "Maple",
+                  "value": "maple"
+                },
+                {
+                  "key": "Spruce",
+                  "value": "spruce"
+                }
+              ]
+            }
+          }
+        },
+        {
+          "id": "neck-profile",
+          "type": "selection",
+          "name": "Neck profile",
+          "config": {
+            "selection": {
+              "multilingual": false,
+              "discoverable": true,
+              "min": 1,
+              "max": 1,
+              "options": [
+                {
+                  "key": "C shape",
+                  "value": "c"
+                },
+                {
+                  "key": "D shape",
+                  "value": "d"
+                },
+                {
+                  "key": "V shape",
+                  "value": "v"
+                }
+              ]
+            }
+          }
+        },
+        {
+          "id": "fretboard-material",
+          "type": "selection",
+          "name": "Fretboard material",
+          "config": {
+            "selection": {
+              "multilingual": false,
+              "discoverable": true,
+              "min": 1,
+              "max": 1,
+              "options": [
+                {
+                  "key": "Rosewood",
+                  "value": "rosewood"
+                },
+                {
+                  "key": "Maple",
+                  "value": "maple"
+                },
+                {
+                  "key": "Ebony",
+                  "value": "Ebony"
+                }
+              ]
+            }
+          }
+        },
+        {
+          "id": "number-of-frets",
+          "type": "numeric",
+          "name": "Number of frets",
+          "config": {
+            "numeric": {
+              "multilingual": false,
+              "required": false,
+              "discoverable": true,
+              "units": [
+                "Frets"
+              ]
+            }
+          }
+        },
+        {
+          "id": "weight",
+          "type": "numeric",
+          "name": "Weight",
+          "config": {
+            "numeric": {
+              "multilingual": false,
+              "required": false,
+              "discoverable": true,
+              "decimalPlaces": 1,
+              "units": [
+                "Kg"
+              ]
+            }
+          }
+        },
+        {
+          "id": "matching-amplifiers",
+          "type": "itemRelations",
+          "name": "Matching amplifiers",
+          "config": {
+            "itemRelations": {
+              "multilingual": false,
+              "discoverable": true,
+              "minItems": 0,
+              "maxItems": 0,
+              "minSkus": 0,
+              "acceptedShapeIdentifiers": [
+                "instrument"
+              ],
+              "quickSelect": {
+                "folders": [
+                  {
+                    "folderId": "68de375ec5a6f99b58b6d8e0"
+                  }
+                ]
+              }
+            }
+          }
+        }
+      ],
+      "intent": "piece/upsert"
+    },
+    {
+      "identifier": "pedal",
+      "name": "Pedal",
+      "components": [
+        {
+          "id": "effect-type",
+          "type": "singleLine",
+          "name": "Effect type",
+          "config": {
+            "singleLine": {
+              "multilingual": true,
+              "required": false,
+              "discoverable": true
+            }
+          }
+        },
+        {
+          "id": "bypass-type",
+          "type": "selection",
+          "name": "Bypass Type",
+          "config": {
+            "selection": {
+              "multilingual": false,
+              "discoverable": true,
+              "min": 1,
+              "max": 1,
+              "options": [
+                {
+                  "key": "True bypass",
+                  "value": "true-bypass"
+                },
+                {
+                  "key": "Buffered bypass",
+                  "value": "buffered-bypass"
+                }
+              ]
+            }
+          }
+        },
+        {
+          "id": "width",
+          "type": "numeric",
+          "name": "Width",
+          "config": {
+            "numeric": {
+              "multilingual": false,
+              "required": false,
+              "discoverable": true,
+              "units": [
+                "cm"
+              ]
+            }
+          }
+        },
+        {
+          "id": "height",
+          "type": "numeric",
+          "name": "Height",
+          "config": {
+            "numeric": {
+              "multilingual": false,
+              "required": false,
+              "discoverable": true,
+              "units": [
+                "cm"
+              ]
+            }
+          }
+        },
+        {
+          "id": "depth",
+          "type": "numeric",
+          "name": "Depth",
+          "config": {
+            "numeric": {
+              "multilingual": false,
+              "required": false,
+              "discoverable": true,
+              "units": [
+                "cm"
+              ]
+            }
+          }
+        },
+        {
+          "id": "weight",
+          "type": "numeric",
+          "name": "Weight",
+          "config": {
+            "numeric": {
+              "multilingual": false,
+              "required": false,
+              "discoverable": true,
+              "decimalPlaces": 1,
+              "units": [
+                "kg"
+              ]
+            }
+          }
+        }
+      ],
+      "intent": "piece/upsert"
+    },
+    {
+      "identifier": "instrument",
+      "name": "Instrument ",
+      "components": [
+        {
+          "id": "short-description",
+          "type": "richText",
+          "name": "Short description",
+          "config": {
+            "richText": {
+              "multilingual": true,
+              "discoverable": true
+            }
+          }
+        },
+        {
+          "id": "description",
+          "type": "richText",
+          "name": "Description",
+          "config": {
+            "richText": {
+              "multilingual": true,
+              "discoverable": true
+            }
+          }
+        },
+        {
+          "id": "story",
+          "type": "paragraphCollection",
+          "name": "Story",
+          "config": {
+            "paragraphCollection": {
+              "discoverable": true,
+              "multilingual": [
+                "title",
+                "body",
+                "images",
+                "videos",
+                "structure"
+              ]
+            }
+          }
+        },
+        {
+          "id": "specs",
+          "type": "componentChoice",
+          "name": "Specs",
+          "config": {
+            "componentChoice": {
+              "discoverable": true,
+              "choices": [
+                {
+                  "id": "amplifier",
+                  "type": "piece",
+                  "name": "Amplifier",
+                  "config": {
+                    "piece": {
+                      "identifier": "amplifier"
+                    }
+                  }
+                },
+                {
+                  "id": "guitar",
+                  "type": "piece",
+                  "name": "Guitar",
+                  "config": {
+                    "piece": {
+                      "identifier": "guitar"
+                    }
+                  }
+                },
+                {
+                  "id": "pedal",
+                  "type": "piece",
+                  "name": "Pedal",
+                  "config": {
+                    "piece": {
+                      "identifier": "pedal"
+                    }
+                  }
+                }
+              ]
+            }
+          }
+        },
+        {
+          "id": "brand",
+          "type": "itemRelations",
+          "name": "Brand",
+          "config": {
+            "itemRelations": {
+              "multilingual": false,
+              "discoverable": true,
+              "minItems": 0,
+              "minSkus": 0,
+              "acceptedShapeIdentifiers": [
+                "brand"
+              ],
+              "quickSelect": {
+                "folders": [
+                  {
+                    "folderId": "6985a0a85bfc63e69cd1e44a"
+                  }
+                ]
+              }
+            }
+          }
+        },
+        {
+          "id": "seo",
+          "type": "piece",
+          "name": "SEO",
+          "config": {
+            "piece": {
+              "identifier": "seo"
+            }
+          }
+        }
+      ],
+      "variantComponents": [],
+      "type": "product",
+      "intent": "shape/upsert"
+    },
+    {
+      "identifier": "label",
+      "name": "Label",
+      "components": [
+        {
+          "id": "name",
+          "type": "singleLine",
+          "name": "Name",
+          "config": {
+            "singleLine": {
+              "multilingual": true,
+              "required": false,
+              "discoverable": true
+            }
+          }
+        },
+        {
+          "id": "icon",
+          "type": "images",
+          "name": "Icon",
+          "config": {
+            "images": {
+              "multilingual": false,
+              "discoverable": true
+            }
+          }
+        },
+        {
+          "id": "description",
+          "type": "richText",
+          "name": "Description",
+          "config": {
+            "richText": {
+              "multilingual": true,
+              "discoverable": true
+            }
+          }
+        }
+      ],
+      "type": "document",
+      "intent": "shape/upsert"
+    },
+    {
+      "identifier": "video-hero",
+      "name": "Video hero",
+      "components": [
+        {
+          "id": "headline",
+          "type": "singleLine",
+          "name": "Headline",
+          "config": {}
+        },
+        {
+          "id": "image",
+          "type": "images",
+          "name": "Image",
+          "config": {}
+        },
+        {
+          "id": "cta",
+          "type": "contentChunk",
+          "name": "CTA",
+          "config": {
+            "contentChunk": {
+              "components": [
+                {
+                  "id": "text",
+                  "type": "singleLine",
+                  "name": "Text",
+                  "config": {}
+                },
+                {
+                  "id": "url",
+                  "type": "singleLine",
+                  "name": "URL",
+                  "config": {}
+                }
+              ],
+              "repeatable": true
+            }
+          }
+        }
+      ],
+      "intent": "piece/upsert"
+    },
+    {
+      "identifier": "landing-page",
+      "name": "Landing page",
+      "components": [
+        {
+          "id": "title",
+          "type": "singleLine",
+          "name": "Title",
+          "config": {
+            "singleLine": {
+              "multilingual": true
+            }
+          }
+        },
+        {
+          "id": "description",
+          "type": "richText",
+          "name": "Description",
+          "config": {
+            "richText": {
+              "multilingual": true
+            }
+          }
+        },
+        {
+          "id": "blocks",
+          "type": "componentMultipleChoice",
+          "name": "Blocks",
+          "config": {
+            "componentMultipleChoice": {
+              "multilingual": true,
+              "choices": [
+                {
+                  "id": "banner",
+                  "type": "piece",
+                  "name": "Banner",
+                  "config": {
+                    "piece": {
+                      "identifier": "banner"
+                    }
+                  }
+                },
+                {
+                  "id": "products",
+                  "type": "itemRelations",
+                  "name": "Products",
+                  "config": {
+                    "itemRelations": {
+                      "multilingual": true,
+                      "minItems": 0,
+                      "maxItems": 0,
+                      "minSkus": 0,
+                      "acceptedShapeIdentifiers": [
+                        "book"
+                      ],
+                      "quickSelect": {
+                        "folders": [
+                          {
+                            "folderId": "6319ecbe8a0ef15cd8cce020"
+                          },
+                          {
+                            "folderId": "633ed76a49dd3855ae0c75f1"
+                          }
+                        ]
+                      }
+                    }
+                  }
+                },
+                {
+                  "id": "cta",
+                  "type": "piece",
+                  "name": "CTA",
+                  "config": {
+                    "piece": {
+                      "identifier": "cta"
+                    }
+                  }
+                },
+                {
+                  "id": "image-slider",
+                  "type": "piece",
+                  "name": "Image slider",
+                  "config": {
+                    "piece": {
+                      "identifier": "image-slider"
+                    }
+                  }
+                },
+                {
+                  "id": "usp",
+                  "type": "piece",
+                  "name": "USP",
+                  "config": {
+                    "piece": {
+                      "identifier": "usp"
+                    }
+                  }
+                },
+                {
+                  "id": "video-hero",
+                  "type": "piece",
+                  "name": "Video hero",
+                  "config": {
+                    "piece": {
+                      "identifier": "video-hero"
+                    }
+                  }
+                }
+              ],
+              "allowDuplicates": true
+            }
+          }
+        },
+        {
+          "id": "seo",
+          "type": "piece",
+          "name": "SEO",
+          "config": {
+            "piece": {
+              "identifier": "seo"
+            }
+          }
+        }
+      ],
+      "type": "document",
+      "intent": "shape/upsert"
+    },
+    {
+      "identifier": "series-big",
+      "name": "Series",
+      "components": [
+        {
+          "id": "title",
+          "type": "singleLine",
+          "name": "Title",
+          "config": {
+            "singleLine": {
+              "multilingual": true,
+              "required": false,
+              "discoverable": true
+            }
+          }
+        },
+        {
+          "id": "image",
+          "type": "images",
+          "name": "Image",
+          "config": {
+            "images": {
+              "multilingual": false,
+              "discoverable": true
+            }
+          }
+        }
+      ],
+      "type": "folder",
+      "intent": "shape/upsert"
+    }
+  ]
+}

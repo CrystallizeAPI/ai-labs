@@ -1,0 +1,23 @@
+{
+  "name": "ai-labs",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+ssh://git@github.com/CrystallizeAPI/ai-lab.git"
+  },
+  "keywords": [
+    "ai",
+    "crystallize"
+  ],
+  "author": "Crystallize",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/CrystallizeAPI/ai-lab/issues"
+  },
+  "homepage": "https://github.com/CrystallizeAPI/ai-lab#readme"
+}
