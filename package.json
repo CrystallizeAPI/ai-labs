@@ -1,6 +1,7 @@
 {
   "name": "ai-labs",
   "version": "1.0.0",
+  "private": true,
   "description": "",
   "main": "index.js",
   "scripts": {
@@ -16,6 +17,11 @@
   ],
   "author": "Crystallize",
   "license": "MIT",
+  "packageManager": "pnpm@10.28.0",
+  "workspaces": [
+    "apps/*",
+    "packages/*"
+  ],
   "bugs": {
     "url": "https://github.com/CrystallizeAPI/ai-lab/issues"
   },

@@ -104,7 +104,7 @@ https://api.crystallize.com/staging-motor-part-as/catalogue
 
 Fetch Vendors:
 ```query FetchVendors{
-  catalogue(path:"/motorpart/leverandor",language: "no"){
+  catalogue(path:"/your-tenant/vendors",language: "no"){
     id
     name
     children{
@@ -117,7 +117,7 @@ Fetch Vendors:
 Fetch Brands:
 
 ```query FetchBrands{
-  catalogue(path:"/motorpart/merker",language: "no"){
+  catalogue(path:"/your-tenant/brands",language: "no"){
     id
     name
     children{
@@ -161,7 +161,7 @@ Fetch Topics:
 Fetch Category Folders:
 
 ```query FetchCategories {
-  catalogue(path: "/motorpart/produkter", language: "no") {
+  catalogue(path: "/your-tenant/products", language: "no") {
     id
     name
     subtree(type: folder) {
