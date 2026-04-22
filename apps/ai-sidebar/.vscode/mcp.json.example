@@ -1,0 +1,12 @@
+{
+  "servers": {
+    "crystallize": {
+      "type": "http",
+      "url": "https://mcp.crystallize.com/mcp",
+      "headers": {
+        "X-Crystallize-Access-Token-Id": "your-token-id",
+        "X-Crystallize-Access-Token-Secret": "your-token-secret"
+      }
+    }
+  }
+}

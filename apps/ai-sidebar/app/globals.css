@@ -1,0 +1,297 @@
+@import "tailwindcss";
+
+/*
+ * Crystallize design system tokens
+ * Source: https://design-system.crystallize.com/?path=/docs/colors--docs
+ *
+ * Semantic roles:
+ *   gray-50   bg-gray        (app background)
+ *   gray-100  gutter         (dividers/borders)
+ *   gray-500  label          (secondary/label text)
+ *   gray-700  text, btn-text (primary text, button text)
+ *   purple-100 btn-bg        (primary button background)
+ *   purple-700 pricelist-text
+ *   pink-300  pricelist-bg
+ *   pink-600  error
+ *
+ * We remap Tailwind's cyan/gray/pink/purple/green/orange scales to the
+ * exact Crystallize palette so existing utility class usage adopts the
+ * brand look without renaming every occurrence.
+ */
+@theme {
+  /* cyan — primary accent */
+  --color-cyan-50: #eefdfc;
+  --color-cyan-100: #bff6f8;
+  --color-cyan-200: #acf1f5;
+  --color-cyan-300: #73e5ed;
+  --color-cyan-400: #33d0dd;
+  --color-cyan-500: #17b3c3;
+  --color-cyan-600: #1690a4;
+  --color-cyan-700: #197385;
+  --color-cyan-800: #1d5e6d;
+  --color-cyan-900: #1c4e5d;
+
+  /* gray — neutrals */
+  --color-gray-50: #f5f5f6;
+  --color-gray-100: #e4e5e9;
+  --color-gray-200: #cccfd5;
+  --color-gray-300: #a9aeb7;
+  --color-gray-400: #7e8592;
+  --color-gray-500: #626778;
+  --color-gray-600: #545866;
+  --color-gray-700: #4c4f5a;
+  --color-gray-800: #40424a;
+  --color-gray-900: #393a40;
+
+  /* purple — primary button + accents */
+  --color-purple-50: #f7f6f9;
+  --color-purple-100: #eeecf2;
+  --color-purple-200: #d8d5e2;
+  --color-purple-300: #b6b0c9;
+  --color-purple-400: #8e85ab;
+  --color-purple-500: #706691;
+  --color-purple-600: #5b5178;
+  --color-purple-700: #4b4262;
+  --color-purple-800: #403953;
+  --color-purple-900: #393347;
+
+  /* pink — used for error + pricelist */
+  --color-pink-50: #fef1f9;
+  --color-pink-100: #fee5f4;
+  --color-pink-200: #ffccec;
+  --color-pink-300: #ffa1db;
+  --color-pink-400: #ff66c0;
+  --color-pink-500: #fb39a4;
+  --color-pink-600: #eb1782;
+  --color-pink-700: #cd0966;
+  --color-pink-800: #a90b54;
+  --color-pink-900: #8d0e49;
+
+  /* green — standalone green scale */
+  --color-green-50: #f2ffee;
+  --color-green-100: #deffd8;
+  --color-green-200: #caffbf;
+  --color-green-300: #8dfd78;
+  --color-green-400: #53f236;
+  --color-green-500: #2cdb0c;
+  --color-green-600: #1eb603;
+  --color-green-700: #1b8e07;
+  --color-green-800: #1a700b;
+  --color-green-900: #165b0c;
+
+  /* orange */
+  --color-orange-50: #fff9eb;
+  --color-orange-100: #ffedc6;
+  --color-orange-200: #ffde99;
+  --color-orange-300: #ffbf4a;
+  --color-orange-400: #ffa520;
+  --color-orange-500: #f98107;
+  --color-orange-600: #dd5c02;
+  --color-orange-700: #b73d06;
+  --color-orange-800: #942e0c;
+  --color-orange-900: #7a270d;
+
+  /* red — map to Crystallize s-red for error surfaces */
+  --color-red-50: #fef2f2;
+  --color-red-100: #ffe1e1;
+  --color-red-200: #ffc8c8;
+  --color-red-300: #ffadad;
+  --color-red-400: #fd6c6c;
+  --color-red-500: #f53e3e;
+  --color-red-600: #e22020;
+  --color-red-700: #be1717;
+  --color-red-800: #9d1717;
+  --color-red-900: #821a1a;
+
+  /* emerald — map to Crystallize s-green for success surfaces */
+  --color-emerald-50: #f2ffee;
+  --color-emerald-100: #deffd8;
+  --color-emerald-200: #caffbf;
+  --color-emerald-300: #8dfd78;
+  --color-emerald-400: #53f236;
+  --color-emerald-500: #2cdb0c;
+  --color-emerald-600: #1eb603;
+  --color-emerald-700: #1b8e07;
+  --color-emerald-800: #1a700b;
+  --color-emerald-900: #165b0c;
+
+  /* amber — map to Crystallize orange for pending/warning surfaces */
+  --color-amber-50: #fff9eb;
+  --color-amber-100: #ffedc6;
+  --color-amber-200: #ffde99;
+  --color-amber-300: #ffbf4a;
+  --color-amber-400: #ffa520;
+  --color-amber-500: #f98107;
+  --color-amber-600: #dd5c02;
+  --color-amber-700: #b73d06;
+  --color-amber-800: #942e0c;
+  --color-amber-900: #7a270d;
+
+  /* blue — map to Crystallize s-blue for info surfaces */
+  --color-blue-50: #eff5ff;
+  --color-blue-100: #dae7ff;
+  --color-blue-200: #bed5ff;
+  --color-blue-300: #a0c4ff;
+  --color-blue-400: #5d96fd;
+  --color-blue-500: #376ffa;
+  --color-blue-600: #214fef;
+  --color-blue-700: #193adc;
+  --color-blue-800: #1b31b2;
+  --color-blue-900: #1c2f8c;
+
+  --font-sans:
+    var(--font-roboto), "Roboto", ui-sans-serif, system-ui, -apple-system,
+    BlinkMacSystemFont, "Segoe UI", "Helvetica Neue", Arial, sans-serif;
+}
+
+:root {
+  --background: #f5f5f6;   /* bg-gray */
+  --foreground: #40424a;   /* text */
+  --accent: #17b3c3;       /* cyan-500 */
+  --accent-dark: #197385;  /* cyan-700 */
+  --border: #e4e5e9;       /* gutter */
+  --muted: #626778;        /* label */
+  --btn-bg: #f7f6f9;       /* purple-50 — neutral button */
+  --btn-bg-primary: #bff6f8; /* cyan-100 — primary button */
+  --btn-bg-primary-hover: #acf1f5; /* cyan-200 */
+  --btn-text: #4c4f5a;     /* gray-700 */
+}
+
+html,
+body {
+  background: var(--background);
+  color: var(--foreground);
+  font-family: var(--font-sans);
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+/* Crystallize-style thin scrollbar */
+::-webkit-scrollbar {
+  width: 6px;
+  height: 6px;
+}
+::-webkit-scrollbar-track {
+  background: transparent;
+}
+::-webkit-scrollbar-thumb {
+  background: #cccfd5; /* gray-200 */
+  border-radius: 999px;
+}
+::-webkit-scrollbar-thumb:hover {
+  background: #a9aeb7; /* gray-300 */
+}
+
+::selection {
+  background: #bff6f8; /* cyan-100 */
+  color: #197385;      /* cyan-700 */
+}
+
+/*
+ * Crystallize design-system primitives
+ * Source: https://design-system.crystallize.com/
+ */
+
+/* Button — default (neutral) */
+.c-btn {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 0.5rem;
+  font-family: var(--font-sans);
+  font-weight: 600;
+  border-radius: 4px;
+  transition: background-color 0.15s ease, color 0.15s ease,
+    box-shadow 0.15s ease;
+  background: var(--btn-bg);
+  color: var(--btn-text);
+  border: 0;
+  cursor: pointer;
+}
+.c-btn:disabled {
+  opacity: 0.5;
+  cursor: not-allowed;
+}
+
+/* Button sizes */
+.c-btn-sm { padding: 8px 16px; font-size: 12px; }
+.c-btn-md { padding: 6px 24px; font-size: 14px; min-height: 32px; }
+.c-btn-lg { padding: 8px 32px; font-size: 16px; min-height: 40px; }
+
+/* Button variants */
+.c-btn-primary {
+  background: var(--btn-bg-primary);
+  color: var(--btn-text);
+}
+.c-btn-primary:hover:not(:disabled) {
+  background: var(--btn-bg-primary-hover);
+}
+.c-btn-neutral:hover:not(:disabled) {
+  background: #eeecf2; /* purple-100 */
+}
+.c-btn-danger {
+  background: var(--btn-bg);
+  color: #eb1782; /* pink-600 */
+}
+.c-btn-danger:hover:not(:disabled) {
+  background: #eeecf2;
+}
+.c-btn-white {
+  background: #ffffff;
+  color: var(--btn-text);
+  box-shadow: 0 2px 4px rgba(130, 138, 144, 0.15);
+}
+
+/* Tag */
+.c-tag {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.25rem;
+  padding: 0 8px;
+  font-size: 12px;
+  font-weight: 500;
+  color: var(--btn-text);
+  background: var(--btn-bg);
+  border: 0.8px solid #cccfd5; /* gray-200 */
+  border-radius: 4px;
+  line-height: 1.6;
+}
+
+/* Label */
+.c-label {
+  color: #626778; /* gray-500 label */
+  font-size: 14px;
+  font-weight: 500;
+}
+
+/* Input */
+.c-input {
+  width: 100%;
+  padding: 10px 12px;
+  font-size: 14px;
+  font-weight: 400;
+  color: var(--btn-text);
+  background: #ffffff;
+  border: 0.8px solid #cccfd5; /* gray-200 */
+  border-radius: 4px;
+  outline: none;
+  transition: border-color 0.15s ease, box-shadow 0.15s ease;
+}
+.c-input::placeholder { color: #a9aeb7; }
+.c-input:focus {
+  border-color: #17b3c3; /* cyan-500 */
+  box-shadow: 0 0 0 3px rgba(23, 179, 195, 0.15);
+}
+
+/* Card */
+.c-card {
+  background: #ffffff;
+  border: 1px solid #e4e5e9; /* gutter */
+  border-radius: 8px;
+  overflow: hidden;
+}
+.c-card-elevated {
+  background: #ffffff;
+  border-radius: 8px;
+  box-shadow: 0 2px 4px rgba(130, 138, 144, 0.15);
+}
