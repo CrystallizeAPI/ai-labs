@@ -11,6 +11,7 @@ This repository contains a collection of experimental applications that demonstr
 | App | Description |
 |-----|-------------|
 | [spreadsheet-ai-import](./apps/spreadsheet-ai-import) | Import products from Excel spreadsheets into Crystallize PIM with AI-powered content enrichment |
+| [ai-sidebar](./apps/ai-sidebar) | Crystallize side-by-side custom view that lets editors update item content (including nested pieces and chunks) through natural-language prompts, powered by Anthropic Claude |
 
 ## Getting Started
 
@@ -40,13 +41,15 @@ cd apps/spreadsheet-ai-import
 pnpm dev
 ```
 
+Each app is self-contained — see its own README for setup details (env vars, API keys, etc.). For example, `apps/ai-sidebar` is a Next.js app registered as a Crystallize custom view and requires Crystallize + Anthropic credentials; see [apps/ai-sidebar/README.md](./apps/ai-sidebar/README.md).
+
 ## Tech Stack
 
-- **Build Tool**: Vite
-- **Framework**: React + TypeScript
-- **Styling**: Tailwind CSS
-- **AI**: OpenAI GPT
-- **Package Manager**: pnpm workspaces
+Varies per app. Current stacks in use:
+
+- **spreadsheet-ai-import**: Vite + React + TypeScript, Tailwind CSS, OpenAI GPT
+- **ai-sidebar**: Next.js 16 (App Router) + React 19 + TypeScript, Tailwind CSS 4, `@crystallize/js-api-client`, `@crystallize/app-signal`, Anthropic Claude
+- **Package manager**: pnpm workspaces
 
 ## Contributing
 
